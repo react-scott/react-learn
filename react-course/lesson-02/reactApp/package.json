@@ -1,0 +1,17 @@
+{
+  "name": "react-test",
+  "version": "1.0.0",
+  "description": "react 测试",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --hot"
+  },
+  "author": "Scott",
+  "license": "MIT",
+  "dependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.8.0",
+    "react": "^0.14.8",
+    "react-dom": "^0.14.8"
+  }
+}
