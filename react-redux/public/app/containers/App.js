@@ -6,7 +6,9 @@ import { connect } from 'react-redux'
 import ImmutableRenderMixin from 'react-immutable-render-mixin'
 import * as ItemsActions from '../actions'
 import { bindActionCreators } from 'redux'
-
+/**
+ * 智能组件，会通过react-redux函数提供的connect函数把state和actions转换为旗下木偶组件所需要的props。
+ */
 let App = React.createClass({
     mixins: [ImmutableRenderMixin],
     propTypes: {
