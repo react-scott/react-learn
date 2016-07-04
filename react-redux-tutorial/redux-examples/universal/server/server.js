@@ -28,6 +28,11 @@ app.use(webpackHotMiddleware(compiler))
 // This is fired every time the server side receives a request
 app.use(handleRender)
 
+/**
+ * 服务端请求api，发送html串和state
+ * @param req
+ * @param res
+ */
 function handleRender(req, res) {
   // Query our mock API asynchronously
   fetchCounter(apiResult => {
@@ -73,6 +78,16 @@ function renderFullPage(html, initialState) {
     </html>
     `
 }
+
+/**
+ * api写好了，我们调用了这个api，即fetchCounter，这个api函数也会产生一个回调，我们在回调中获取counter值
+ 如果中间件请求中有参数，则const params = qs.parse(req.query)，counter为parseInt(params.counter, 10)。
+ 否则counter为api的回调中返回的值apiResult，如果前两个都没有则为0。qs用于解析http请求中的querystring，就是？param=sth。
+ 得到counter，我们就得到了state，用state作为参数，重新生成一个store实例，每次都要重新生成一个新的store实例。
+ 然后用react的服务端渲染生成一个html串，把它发送出去
+ 同时，我们还要发送一个const finalState = store.getState()出去，让客户端拿到这个state渲染，为什么？
+ 因为要保证客户端和服务端渲染的组件一样。
+ */
 
 app.listen(port, (error) => {
   if (error) {

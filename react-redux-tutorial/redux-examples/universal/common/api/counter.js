@@ -1,3 +1,11 @@
+/**
+ * 虚拟API
+ 首先，我们要模拟一个api，用于异步请求数据。
+ * @param min
+ * @param max
+ * @returns {*}
+ */
+
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min
 }
