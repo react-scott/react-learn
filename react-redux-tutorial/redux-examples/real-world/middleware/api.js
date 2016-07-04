@@ -2,6 +2,19 @@ import { Schema, arrayOf, normalize } from 'normalizr'
 import { camelizeKeys } from 'humps'
 import 'isomorphic-fetch'
 
+/**
+ * redux中间件就是个嵌套函数
+ redux中间一共嵌套了三层函数，分别传递了store、next、action这三个参数。
+
+ 为什么要嵌套函数？为何不在一层函数中传递三个参数，而要在一层函数中传递一个参数，一共传递三层？
+ 因为中间件是要多个首尾相连的，对next进行一层层的“加工”，所以next必须独立一层。那么store和action呢？
+ store的话，我们要在中间件顶层放上store，因为我们要用store的dispatch和getState两个方法。
+ action的话，是因为我们封装了这么多层，其实就是为了作出更高级的dispatch方法，
+ 但是在高级也是dispatch，是dispatch，就得接受action这个参数。
+ * @param response
+ * @returns {*}
+ */
+
 // Extracts the next page URL from Github API response.
 function getNextPageUrl(response) {
   const link = response.headers.get('link')
@@ -121,3 +134,9 @@ export default store => next => action => {
     }))
   )
 }
+
+/**
+ * 例子中，我们用store => next => action =>实现了三层函数嵌套。箭头语法很好的代替了丑陋的function嵌套方法。
+ * 最后指向的那个{}里面，我们就可以写关于dispatch的装饰了，不过记得返回next，给下一个中间件使用。
+ *
+ */
