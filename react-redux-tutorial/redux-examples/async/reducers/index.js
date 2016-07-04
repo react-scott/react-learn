@@ -63,3 +63,14 @@ const rootReducer = combineReducers({
 })
 
 export default rootReducer
+
+/**
+ * 我们写了两个reducer，postsByReddit, selectedReddit，最后把它们合并起来。
+ * 所以我们的全局单一state树的第一级节点是postsByReddit, selectedReddit。
+
+ postsByReddit节点下面就是postsByReddit返回的state，
+ 也就是[action.reddit]: posts(state[action.reddit], action)。
+ posts()就是{ isFetching: false,didInvalidate: false, items: [] }
+
+ 现在明白了全局单一state树是如何构建了的吧？----通过reducer。
+ */

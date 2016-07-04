@@ -11,12 +11,28 @@ class App extends Component {
     this.handleRefreshClick = this.handleRefreshClick.bind(this)
   }
 
+  /**
+   * 首先，执行了componentDidMount，也就是渲染了组件。然后执行request_post的action，这个action改变了state，
+   * state和props就是部分绑定关系，所以触发了componentWillReceiveProps。
+   */
+
   //初始化渲染后触发
   componentDidMount() {
     console.log('执行componentDidMount');
     const { dispatch, selectedReddit } = this.props
     dispatch(fetchPostsIfNeeded(selectedReddit))
   }
+
+  /**
+   * 接下来又执行了componentWillReceiveProps，为什么呢？因为获取新闻数据成功了，state改变了，
+   * 被绑定的props也变了，所以执行了componentWillReceiveProps。我们可以看到posts里面已经有值了，
+   * 这时触发了receive_posts的action。
+   *
+   *
+   * 由此可见，componentWillReceiveProps在redux+react的程序中，是个非常常用的概念，甚至可以说，
+   * 只要能监听每次的componentWillReceiveProps，就可以清楚的了解react和redux的交互过程。
+   * @param nextProps
+   */
 
   //每次接受新的props触发
   componentWillReceiveProps(nextProps) {
