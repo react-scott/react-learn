@@ -1,0 +1,15 @@
+{
+  "name": "02-react-install",
+  "version": "1.0.0",
+  "description": "react install",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "scott",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1"
+  }
+}
