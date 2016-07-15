@@ -47,7 +47,7 @@ ReactDOM.render(
 
 注意：
 
-如果我们需要使用 JSX，则<script>标签的type属性需要设置为 text/babel。
+如果我们需要使用JSX则```<script>```标签的type属性需要设置为 text/babel。
 
 通过 npm 使用 React
 
