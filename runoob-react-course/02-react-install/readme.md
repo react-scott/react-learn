@@ -1,4 +1,5 @@
 ###React 安装
+
 React 可以直接下载使用，下载包中也提供了很多学习的实例。
 
 本教程使用了 React 的版本为 0.14.7，你可以在官网 http://facebook.github.io/react/ 下载最新版。
@@ -253,4 +254,5 @@ ReactDOM.render(<App />, document.getElementById('app'))
 $ npm start
 ```
 
-通过浏览器访问 http://localhost:7777/，输出结果如下：
+通过浏览器访问 http://localhost:8002/，输出结果如下：
+
