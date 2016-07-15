@@ -2,9 +2,9 @@
   "name": "02-react-install",
   "version": "1.0.0",
   "description": "react install",
-  "main": "index.js",
+  "main": "bundle.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --hot"
   },
   "author": "scott",
   "license": "MIT",

@@ -197,7 +197,7 @@ $ cat package.json
 
    <head>
       <meta charset = "UTF-8">
-      <title>React App - 菜鸟教程(runoob.com)</title>
+      <title>React App</title>
    </head>
 
    <body>
