@@ -74,7 +74,7 @@ $ npm init
 ```
 name: (reactApp) runoob-react-test
 version: (1.0.0)
-description: 菜鸟教程 react 测试
+description: react test
 entry point: (index.js)
 test command:
 git repository:
@@ -86,7 +86,7 @@ About to write to /Users/tianqixin/www/reactApp/package.json:
 {
   "name": "runoob-react-test",
   "version": "1.0.0",
-  "description": "菜鸟教程 react 测试",
+  "description": "react test",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -136,7 +136,7 @@ $ touch webpack.config.js
 
    devServer: {
       inline: true,
-      port: 7777
+      port: 8002
    },
 
    module: {
@@ -169,20 +169,26 @@ module：定义了对模块的处理逻辑，这里可以用loaders定义了一�
 ```
 $ cat package.json
 {
-  "name": "runoob-react-test",
+  "name": "02-react-install",
   "version": "1.0.0",
-  "description": "菜鸟教程 react 测试",
-  "main": "index.js",
+  "description": "react install",
+  "main": "bundle.js",
   "scripts": {
-	"start": "webpack-dev-server --hot"
+    "start": "webpack-dev-server --hot"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "scott",
+  "license": "MIT",
   "dependencies": {
-    "react": "^0.14.7",
-    "react-dom": "^0.14.7"
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "webpack": "^1.13.1"
   }
 }
+
 ```
 
 现在我们可以使用 npm start 命令来启动服务。
@@ -222,7 +228,6 @@ class App extends React.Component {
       return (
          <div>
             Hello World!!!<br />
-            欢迎来到菜鸟教程学习！！！
          </div>
       );
    }
@@ -256,3 +261,4 @@ $ npm start
 
 通过浏览器访问 http://localhost:8002/，输出结果如下：
 
+![](img/1.png)
