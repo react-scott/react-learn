@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React.findDOMNode()</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+    <div id="example"></div>
+    <script type="text/babel">
+
+        var MyComponent = React.createClass({
+
+            handleClick: function () {
+                //要从组件获取真实 DOM 的节点，这时就要用到 React.findDOMNode 方法
+                React.findDOMNode(this.refs.myTextInput).focus();
+            },
+            
+            render: function () {
+
+                return(
+                    <div>
+                        <input type="text" ref="myTextInput"/>
+                        <br/><br/>
+                        <input type="button" value="Focus the text input" onClick={this.handleClick}/>
+                    </div>
+                )
+
+            }
+
+        })
+
+
+        ReactDOM.render(
+            <MyComponent />,
+            document.getElementById('example')
+        )
+
+    </script>
+</body>
+</html>
