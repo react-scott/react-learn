@@ -1,6 +1,2 @@
-<<<<<<< HEAD
-# react-learn
-react学习
-=======
-# react-learn
->>>>>>> origin/master
+
+### react以及react native学习
